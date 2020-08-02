@@ -263,8 +263,8 @@ services:
       - PEER0_PORT=${PEER0_PORT:-7051}
       - DISCOVER_AS_LOCALHOST=false
       - DNS_CHANNEL=${DNS_CHANNEL:-common}
-      - DNS_USERNAME=${DNS_USERNAME:-dns}
-      - DNS_PASSWORD=${DNS_PASSWORD:-dns}
+      - DNS_USERNAME=${ENROLL_ID:-admin}
+      - DNS_PASSWORD=${ENROLL_SECRET:-adminpw}
       - ENROLL_ID
       - ENROLL_SECRET
       - BOOTSTRAP_IP
