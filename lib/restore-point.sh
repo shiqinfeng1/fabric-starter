@@ -21,7 +21,7 @@ docker run --name tempCopy --detach \
 -v $PWD/data:/opt/data \
 -v $PWD/crypto-config:/opt/crypto-config \
 -v ${backupDir}:/backup \
-olegabu/fabric-tools-extended bash -c "tail -f /var/log/dpkg.log"
+shiqinfeng1/fabric-tools-extended bash -c "tail -f /var/log/dpkg.log"
 
 printInColor "1;32" "\nRestoring files"
 docker exec -t tempCopy bash -c "rm -rf /docker/volumes/*"

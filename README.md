@@ -7,7 +7,7 @@ The network is run by docker containers and can be deployed to one host for deve
 or production.
 
 Scripts of this starter generate crypto material and config files, start the network and deploy your chaincodes. 
-Developers can use [REST API](https://github.com/olegabu/fabric-starter-rest) to invoke and query chaincodes, 
+Developers can use [REST API](https://github.com/shiqinfeng1/fabric-starter-rest) to invoke and query chaincodes, 
 explore blocks and transactions.
 
 What's left is to develop your chaincodes and place them into the [chaincode](./chaincode) folder, 
@@ -15,9 +15,9 @@ and user interface as a single page web app that you can serve by by placing the
 
 See also
 
-- [fabric-starter-rest](https://github.com/olegabu/fabric-starter-rest) REST API server and client built with NodeJS SDK
-- [fabric-starter-web](https://github.com/olegabu/fabric-starter-web) Starter web application to work with the REST API
-- [chaincode-node-storage](https://github.com/olegabu/chaincode-node-storage) Base class for node.js chaincodes with CRUD functionality
+- [fabric-starter-rest](https://github.com/shiqinfeng1/fabric-starter-rest) REST API server and client built with NodeJS SDK
+- [fabric-starter-web](https://github.com/shiqinfeng1/fabric-starter-web) Starter web application to work with the REST API
+- [chaincode-node-storage](https://github.com/shiqinfeng1/chaincode-node-storage) Base class for node.js chaincodes with CRUD functionality
 
 
 ## Blockchain network deployment
@@ -120,10 +120,10 @@ As this project doesn't have a defined release cycle yet we create
 when we see code is stable enough or before introducing major changes\new features.  
 
 `Note`, the Hyperledger Fabric version which the snapshot depends on is defined in the `.env` file.  
-Also this project uses _olegabu/fabric-starter-rest_ docker image which has 
+Also this project uses _shiqinfeng1/fabric-starter-rest_ docker image which has 
 the same versioning approach but even updated docker image with the same label (e.g. latest)
 won't be pulled automatically if it exists in the local docker registry.   
-You have to remove the old image manually (by `docker rmi -f olegabu/fabric-starter-rest`).    
+You have to remove the old image manually (by `docker rmi -f shiqinfeng1/fabric-starter-rest`).    
 
 
 The _`master`_ branch as well as potentially _`feature branches`_ are used for development.  

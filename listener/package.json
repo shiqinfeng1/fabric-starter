@@ -8,14 +8,14 @@
     "dev": "nodemon app.js",
     "start": "node app.js"
   },
-  "author": "Oleg Abdrashitov <olegabu73@gmail.com>",
+  "author": "Oleg Abdrashitov <shiqinfeng173@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "fabric-starter-rest": "git+https://git@github.com/olegabu/fabric-starter-rest.git",
+    "fabric-starter-rest": "git+https://git@github.com/shiqinfeng1/fabric-starter-rest.git",
     "log4js": "^3.0.6"
   },
   "devDependencies": {
-    "fabric-starter-rest": "git+https://git@github.com/olegabu/fabric-starter-rest.git",
+    "fabric-starter-rest": "git+https://git@github.com/shiqinfeng1/fabric-starter-rest.git",
     "mocha": "^5.2.0"
   }
 }

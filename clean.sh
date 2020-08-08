@@ -27,5 +27,5 @@ else
     [ "$all" == "all" ] && docker-machine ssh ${DOCKER_MACHINE_NAME} sudo rm -rf data/
 fi
 
-#docker rmi -f $(docker images -q -f "reference=olegabu/fabric-starter-client")
+#docker rmi -f $(docker images -q -f "reference=shiqinfeng1/fabric-starter-client")
 #docker network rm `(docker network ls -q)`

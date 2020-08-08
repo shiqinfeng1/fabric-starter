@@ -55,7 +55,7 @@ Note the path to the source code is inside `cli` docker container and is mapped 
 
 ## Invoke chaincode
 
-Chaincode *reference* extends [chaincode-node-storage](https://github.com/olegabu/chaincode-node-storage) 
+Chaincode *reference* extends [chaincode-node-storage](https://github.com/shiqinfeng1/chaincode-node-storage) 
 which provides CRUD functionality.
 
 Invoke chaincode to save entities of type *account*.

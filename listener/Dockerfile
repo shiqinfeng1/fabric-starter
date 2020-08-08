@@ -1,6 +1,6 @@
 FROM node:8-alpine
 
-MAINTAINER olegabu
+MAINTAINER shiqinfeng1
 
 # Create app directory
 WORKDIR /usr/src/app
