@@ -16,8 +16,9 @@ source lib/util/util.sh
 export DOMAIN ORG
 
 function runCLI() {
-    local command="$1"
+    local command="$1"    # 获取命令和参数
 
+    # 不同的节点发出的命令需要不同的容器执行环境
     if [ -n "$EXECUTE_BY_ORDERER" ]; then
         service="cli.orderer"
         checkContainer="cli.${ORDERER_NAME}.${ORDERER_DOMAIN}"
@@ -33,10 +34,10 @@ function runCLI() {
 }
 
 function runCLIWithComposerOverrides() {
-    local composeCommand=${1:?Compose command must be specified}
+    local composeCommand=${1:?Compose command must be specified}  
     local service=${2}
     local command=${3}
-    IFS=' ' composeCommandSplitted=($composeCommand)
+    IFS=' ' composeCommandSplitted=($composeCommand)   # run --no-deps --rm cli.peer cmd
 
     [ -n "$EXECUTE_BY_ORDERER" ] && composeTemplateFile="$FABRIC_STARTER_HOME/docker-compose-orderer.yaml" || composeTemplateFile="$FABRIC_STARTER_HOME/docker-compose.yaml"
 
@@ -53,6 +54,7 @@ function runCLIWithComposerOverrides() {
 
     printInColor "1;32" "Execute: docker-compose -f ${composeTemplateFile} ${multihostComposeFile} ${couchDBComposeFile} ${ldapComposeFile} ${composeCommandSplitted[0]} ${composeCommandSplitted[1]} ${composeCommandSplitted[2]} ${service} ${command:+bash -c} $command"
     if [ -n "$command" ]; then
+        # docker-compose -f docker-composexx.yaml  -fdocker-compose-orderer-multihost.yaml -fdocker-compose-couchdb.yaml -fdocker-compose-ldap.yaml  run --no-deps --rm cli.peer cmd bash -c "${command}"
         docker-compose -f "${composeTemplateFile}" ${multihostComposeFile} ${portsComposeFile} ${couchDBComposeFile} ${ldapComposeFile} ${composeCommandSplitted[0]} ${composeCommandSplitted[1]}  ${composeCommandSplitted[2]} ${service} bash -c "${command}"
     else
         docker-compose -f "${composeTemplateFile}" ${multihostComposeFile} ${portsComposeFile} ${couchDBComposeFile} ${ldapComposeFile} ${composeCommandSplitted[0]} ${composeCommandSplitted[1]} ${composeCommandSplitted[2]} ${service}

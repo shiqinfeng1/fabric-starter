@@ -14,18 +14,18 @@ BASEDIR=$(dirname "$0")
 docker-compose -f ${BASEDIR}/docker-compose-local-docker.yaml up -d
 
 dockerImages=(\
-    "hyperledger/fabric-baseimage:amd64-0.4.15" \
-    "hyperledger/fabric-baseimage:latest" \
-    "hyperledger/fabric-baseos" \
-    "hyperledger/fabric-javaenv:${FABRIC_VERSION}" \
-    "hyperledger/fabric-ccenv:${FABRIC_VERSION}" \
-    "hyperledger/fabric-orderer:${FABRIC_VERSION}" \
-    "hyperledger/fabric-peer:${FABRIC_VERSION}" \
-    "hyperledger/fabric-ca:${FABRIC_VERSION}" \
-    "hyperledger/fabric-couchdb" \
-    "nginx" \
-    "shiqinfeng1/fabric-starter-rest:${FABRIC_STARTER_VERSION:-latest}" \
-    "shiqinfeng1/fabric-tools-extended:${FABRIC_STARTER_VERSION:-latest}" \
+    "registry.cn-shanghai.aliyuncs.com/hyperledger-bin/fabric-baseimage:amd64-0.4.15" \
+    "registry.cn-shanghai.aliyuncs.com/hyperledger-bin/fabric-baseimage:latest" \
+    "registry.cn-shanghai.aliyuncs.com/hyperledger-bin/fabric-baseos" \
+    "registry.cn-shanghai.aliyuncs.com/hyperledger-bin/fabric-javaenv:${FABRIC_VERSION}" \
+    "registry.cn-shanghai.aliyuncs.com/hyperledger-bin/fabric-ccenv:${FABRIC_VERSION}" \
+    "registry.cn-shanghai.aliyuncs.com/hyperledger-bin/fabric-orderer:${FABRIC_VERSION}" \
+    "registry.cn-shanghai.aliyuncs.com/hyperledger-bin/fabric-peer:${FABRIC_VERSION}" \
+    "registry.cn-shanghai.aliyuncs.com/hyperledger-bin/fabric-ca:${FABRIC_VERSION}" \
+    "registry.cn-shanghai.aliyuncs.com/hyperledger-bin/fabric-couchdb" \
+    "registry.cn-shanghai.aliyuncs.com/shiqinfeng1/nginx" \
+    "registry.cn-shanghai.aliyuncs.com/shiqinfeng1/fabric-starter-rest:${FABRIC_STARTER_VERSION:-latest}" \
+    "registry.cn-shanghai.aliyuncs.com/shiqinfeng1/fabric-tools-extended:${FABRIC_STARTER_VERSION:-latest}" \
     "apolubelov/fabric-scalaenv:${JAVA_RUNTIME_VERSION:-latest}"
     )
 

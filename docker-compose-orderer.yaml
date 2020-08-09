@@ -171,7 +171,7 @@ services:
 
   # http serves certificates
 #  www.orderer:
-#    image: ${DOCKER_REGISTRY:-docker.io}/nginx
+#    image: ${DOCKER_REGISTRY:-docker.io}/shiqinfeng1/nginx
 #    container_name: www.${DOMAIN:-example.com}
 #    #    ports:
 #    #      - ${WWW_PORT:-8080}:80
@@ -182,7 +182,7 @@ services:
 #    - post-install
 
   www.orderer:
-    image: ${DOCKER_REGISTRY:-docker.io}/nginx
+    image: ${DOCKER_REGISTRY:-docker.io}/shiqinfeng1/nginx
     container_name: www.${DOMAIN:-example.com}
     #    ports:
     #      - ${WWW_PORT:-8080}:80

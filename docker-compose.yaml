@@ -123,8 +123,8 @@ services:
     - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=fabric-starter_default
     - CORE_VM_DOCKER_ATTACHSTDOUT=true
 #    - FABRIC_LOGGING_SPEC=peer=DEBUG:endorser=DEBUG:nodeCmd=DEBUG:committer=DEBUG
-    - CORE_CHAINCODE_BUILDER=${DOCKER_REGISTRY:-docker.io}/${CORE_CHAINCODE_BUILDER:-hyperledger/fabric-ccenv}:${FABRIC_VERSION:-latest}
-    - CORE_CHAINCODE_JAVA_RUNTIME=${DOCKER_REGISTRY:-docker.io}/${CORE_CHAINCODE_JAVA_RUNTIME:-hyperledger/fabric-javaenv}:${FABRIC_JAVA_RUNTIME_VERSION:-latest}
+    - CORE_CHAINCODE_BUILDER=${DOCKER_REGISTRY:-docker.io}/${CORE_CHAINCODE_BUILDER:-hyperledger-bin/fabric-ccenv}:${FABRIC_VERSION:-latest}
+    - CORE_CHAINCODE_JAVA_RUNTIME=${DOCKER_REGISTRY:-docker.io}/${CORE_CHAINCODE_JAVA_RUNTIME:-hyperledger-bin/fabric-javaenv}:${FABRIC_JAVA_RUNTIME_VERSION:-latest}
     - CORE_CHAINCODE_LOGGING_LEVEL=DEBUG
     - CORE_CHAINCODE_LOGGING_SHIM=debug
 #    - CORE_CHAINCODE_STARTUPTIMEOUT=600000
@@ -281,7 +281,7 @@ services:
   # simple http server to disseminate certificates
   www.peer:
     container_name: www.${ORG:-org1}.${DOMAIN:-example.com}
-    image: ${DOCKER_REGISTRY:-docker.io}/nginx
+    image: ${DOCKER_REGISTRY:-docker.io}/shiqinfeng1/nginx
     depends_on:
       - pre-install
     logging:

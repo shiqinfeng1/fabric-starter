@@ -12,9 +12,11 @@ source lib/container-lib.sh 2>/dev/null # for IDE code completion
 source $(dirname "$0")/lib/container-lib.sh
 
 function prepareLDAPBaseDN() {
-    IFS='.' read -r -a subDomains <<< ${DOMAIN}
+    # 读入环境变量DOMAIN， 以.为分隔符，例如DOMAIN=example.com，那么subDomains=[example com]
+    IFS='.' read -r -a subDomains <<< ${DOMAIN}   
 
     echo $DOMAIN
+    # 下面结果 LDAP_BASE_DN = dc=example,dc=com
     if [ -z "$LDAP_BASE_DN" ]; then
         for subDomain in ${subDomains[@]}; do
             [ -n "${LDAP_BASE_DN}" ] && COMMA=,
