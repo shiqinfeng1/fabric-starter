@@ -12,7 +12,7 @@ volumes:
 
 x-peer:
   &peer-defaults
-  image: ${DOCKER_REGISTRY:-docker.io}/hyperledger/fabric-peer:${FABRIC_VERSION:-latest}
+  image: ${DOCKER_REGISTRY:-docker.io}/hyperledger-bin/fabric-peer:${FABRIC_VERSION:-latest}
   working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
   command: peer node start
   volumes:
@@ -87,7 +87,7 @@ services:
 
   ca:
     container_name: ca.${ORG:-org1}.${DOMAIN:-example.com}
-    image: ${DOCKER_REGISTRY:-docker.io}/hyperledger/fabric-ca:${FABRIC_VERSION:-latest}
+    image: ${DOCKER_REGISTRY:-docker.io}/hyperledger-bin/fabric-ca:${FABRIC_VERSION:-latest}
     restart: always
     environment:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
